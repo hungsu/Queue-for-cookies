@@ -1,25 +1,11 @@
-# Ruby on Rails Tutorial: sample application
+Hi Hadjar!
 
-This is the sample application for
-[*Ruby on Rails Tutorial: Learn Web Development with Rails*](http://railstutorial.org/)
-by [Michael Hartl](http://michaelhartl.com/). You can use this reference implementation to help track down errors if you end up having trouble with code in the tutorial. In particular, as a first debugging check I suggest getting the test suite to pass on your local machine:
+This is a very simple implementation of the Who's here for cookies widget, using only the libraries already available to me in the base app.
 
-    cd /tmp
-    git clone https://github.com/railstutorial/sample_app_rails_4.git
-    cd sample_app_rails_4
-    cp config/database.yml.example config/database.yml
-    bundle install --without production
-    bundle exec rake db:migrate
-    bundle exec rake db:test:prepare
-    bundle exec rspec spec/
+I was tempted to use additional libraries to show my experience with them, but I think for such a tiny project that would be needlessly complex.
 
-If the tests don't pass, it means there may be something wrong with your system. If they do pass, then you can debug your code by comparing it with the reference implementation.
+The Ruby implementation is very straightforward - it's almost entirely just what is available in the Pusher documentation. I was tempted to have the user signon automatically redirect them to the home page so they could line up for cookies right away, but this wasn't asked of me so I left it be.
 
-## Get Started in seconds on Nitrous.IO
+The Javascript implementation should also be straightforward. It is almost entirely in one javascript file associated with the home page. In a more complex application, I would prefer for the widget's javascript to be kept inside an enclosed module depending on developer's module preference and existing frameworks, but this widget is so simple I felt that was all unnecessary.
 
-[Nitrous.IO](https://www.nitrous.io/?utm_source=github.com&utm_campaign=railstutorial-sample_app_rails_4&utm_medium=hackonnitrous) is a cloud-based platform that will let you start working on this project in a matter of seconds.
-
-Click on the button below to get started:
-
-[![Hack railstutorial/sample_app_rails_4 on
-Nitrous.IO](https://d3o0mnbgv6k92a.cloudfront.net/assets/hack-l-v1-3cc067e71372f6045e1949af9d96095b.png)](https://www.nitrous.io/hack_button?source=embed&runtime=rails&repo=railstutorial%2Fsample_app_rails_4&file_to_open=README.nitrous.md)
+Hung-Su
