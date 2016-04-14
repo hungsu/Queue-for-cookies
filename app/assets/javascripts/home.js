@@ -53,22 +53,22 @@ $(document).ready(function(){
 			}
 		});
 
-		function giveCookie() {
+		var giveCookie = function() {
 			$widget[0].textContent = 'Have a cookie ' + channel.members.me.info.name + '!';
 			// Unsubscribe from events - e.g. don't give me a cookie again if another member leaves
 			channel.unbind('pusher:member_removed');
-		}
+		};
 
-		function positionInLine(position) {
+		var positionInLine = function(position) {
 			var suffixes = ['st','nd','rd','th','th','th','th','th','th','th'];
 			var positionString = "";
-			if (position == 0) {
+			if (position === 0) {
 			  positionString = "next";
 			} else {
 			  positionString = (position+1) + suffixes[position % 10];
 			}
 			return "You're " + positionString + " in line for a cookie.";
-		}
+		};
 
 		var debugMessages = pusher.subscribe("test_channel");
 			debugMessages.bind('my_event', function(data) {
