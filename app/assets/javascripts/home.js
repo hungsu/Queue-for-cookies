@@ -15,8 +15,10 @@ $(document).ready(function(){
 
 		var channel = pusher.subscribe('presence-cookies');
 
-		var quota = 1;
+		// Quota of just 1 for dev purposes. Behaviour should be the same for any quota.
+		var quota = 100;
 		var peopleAheadOfMe = [];
+
 
 		/*
 		When user logs into app
@@ -29,13 +31,13 @@ $(document).ready(function(){
 			if (members.count <= quota) {
 			  giveCookie();
 			} else {
-			  members.each(function(member) {
+				members.each(function(member) {
 				if (member.id != members.myID) {
-				  peopleAheadOfMe.push(member.id);
+					peopleAheadOfMe.push(member.id);
 				}
-			  });
+				});
 
-			  $widget[0].textContent = positionInLine(peopleAheadOfMe.length - quota);
+				$widget.find('p')[0].textContent = positionInLine(peopleAheadOfMe.length - quota);
 			}
 		});
 
@@ -49,12 +51,14 @@ $(document).ready(function(){
 			if (peopleAheadOfMe.length < quota) {
 				giveCookie();
 			} else {
-				$widget[0].textContent = positionInLine(peopleAheadOfMe.length - quota);
+				$widget.find('p')[0].textContent = positionInLine(peopleAheadOfMe.length - quota);
 			}
 		});
 
 		var giveCookie = function() {
-			$widget[0].textContent = 'Have a cookie ' + channel.members.me.info.name + '!';
+			// If this were part of a project with an existing view library like React, I would have used that.
+			$widget.find('img').removeClass('hide');
+			$widget.find('p')[0].textContent = 'Hi ' + channel.members.me.info.name + ', here is your cookie!';
 			// Unsubscribe from events - e.g. don't give me a cookie again if another member leaves
 			channel.unbind('pusher:member_removed');
 		};

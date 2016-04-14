@@ -16,18 +16,32 @@
       <%= render 'shared/feed' %>
     </div>
   </div>
-  <h1>Who's here for cookies?</h1>
-  <div class="js-cookie-widget"></div>
+  <div class="js-cookie-widget cookie-widget well">
+    <h1>Who's here for cookies?</h1>
+    <%#
+      Image file for the cookie stored in CDN rather than in Git. Had I used a templating engine or view layer I would have stored this URL in there.
+    %>
+    <img src="http://res.cloudinary.com/hungsu/image/upload/c_scale,w_640/v1460660253/Copy_of_Tim_Tam_bisc_image_oaw7xr.png" alt="" class="hide">
+    <p></p>
+  </div>
 <% else %>
   <div class="center hero-unit">
     <h1>Hung-Su's Cookie Machine</h1>
 
     <h2>
-      In Australia, "cookie" is only used to describe flat, non fluffy, and circular sweet baked treats. A "bikkie" (colloquialism for a "biscuit") is a baked sweet treat of any shape that is hard enough to snap.
+      Free cookies and bikkies for all! Just sign up below to wait in line for your free bikkie.
     </h2>
 
-    <%= link_to "Sign up now!", signup_path,
+    <%= link_to "Sign up for cookies and bikkies!", signup_path,
                                 class: "btn btn-large btn-primary" %>
+    <p>
+      <small>
+        Already have an account? <a href="/signin">Sign in</a>
+      </small>
+    </p>
+    <p class="well well--home">
+      N.B. In Australia, a bikkie is a colloquialism for "biscuit", which is roughly equivalent to "cookie" in the USA.
+    </p>
   </div>
 <% end %>
 
