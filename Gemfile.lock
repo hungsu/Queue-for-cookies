@@ -95,6 +95,7 @@ GEM
       guard (>= 1.1)
       spork (>= 0.8.4)
     hike (1.2.3)
+    httpclient (2.7.1)
     i18n (0.6.9)
     jbuilder (1.0.2)
       activesupport (>= 3.0.0)
@@ -124,6 +125,11 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
+    pusher (0.17.0)
+      httpclient (~> 2.7)
+      multi_json (~> 1.0)
+      pusher-signature (~> 0.1.8)
+    pusher-signature (0.1.8)
     rack (1.5.2)
     rack-test (0.6.2)
       rack (>= 1.0)
@@ -233,6 +239,7 @@ DEPENDENCIES
   jbuilder (= 1.0.2)
   jquery-rails (= 3.0.4)
   pg (= 0.15.1)
+  pusher
   rails (= 4.0.8)
   rails_12factor (= 0.0.2)
   rspec-rails (= 2.13.1)
@@ -245,3 +252,6 @@ DEPENDENCIES
   turbolinks (= 1.1.1)
   uglifier (= 2.1.1)
   will_paginate (= 3.0.4)
+
+BUNDLED WITH
+   1.11.2
